@@ -1,0 +1,330 @@
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.157:3000
+- Environments: .env.local
+✓ Ready in 889ms
+✓ Running next.config.ts took 84ms
+
+○ Compiling / ...
+Attention: Clerk collects telemetry data from its SDKs when connected to development instances.
+The data collected is used to inform Clerk's product roadmap.
+To learn more, including how to opt-out from the telemetry program, visit: https://clerk.com/docs/telemetry.
+
+ GET / 200 in 8.4s (next.js: 7.3s, proxy.ts: 361ms, application-code: 745ms)
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/news?pageSize=50 200 in 863ms (next.js: 296ms, proxy.ts: 80ms, application-code: 487ms)
+ GET /api/vehicles?pageSize=50 200 in 863ms (next.js: 601ms, proxy.ts: 82ms, application-code: 179ms)
+ GET /api/characters?pageSize=50 200 in 873ms (next.js: 526ms, proxy.ts: 82ms, application-code: 265ms)
+ GET /api/tips?pageSize=50 200 in 885ms (next.js: 668ms, proxy.ts: 82ms, application-code: 135ms)
+ GET /api/locations?pageSize=50 200 in 867ms (next.js: 703ms, proxy.ts: 82ms, application-code: 82ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 975ms (next.js: 207ms, proxy.ts: 733ms, application-code: 35ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+ GET /api/vehicles?pageSize=50 200 in 261ms (next.js: 37ms, proxy.ts: 146ms, application-code: 78ms)
+ GET /api/news?pageSize=50 200 in 267ms (next.js: 60ms, proxy.ts: 147ms, application-code: 60ms)
+ GET /api/characters?pageSize=50 200 in 269ms (next.js: 77ms, proxy.ts: 144ms, application-code: 49ms)
+ GET /api/tips?pageSize=50 200 in 249ms (next.js: 81ms, proxy.ts: 135ms, application-code: 33ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/locations?pageSize=50 200 in 232ms (next.js: 107ms, proxy.ts: 109ms, application-code: 15ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 146ms (next.js: 12ms, proxy.ts: 119ms, application-code: 14ms)
+[Analytics] Received 2 events
+ POST /api/analytics 200 in 102ms (next.js: 65ms, proxy.ts: 17ms, application-code: 20ms)
+ GET / 200 in 91ms (next.js: 14ms, proxy.ts: 8ms, application-code: 69ms)
+ GET / 200 in 66ms (next.js: 6ms, proxy.ts: 8ms, application-code: 52ms)
+ GET / 200 in 58ms (next.js: 7ms, proxy.ts: 6ms, application-code: 45ms)
+✓ Compiled in 51.9s
+ GET / 200 in 1947ms (next.js: 1004ms, proxy.ts: 47ms, application-code: 896ms)
+ GET / 200 in 876ms (next.js: 448ms, proxy.ts: 77ms, application-code: 351ms)
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/news?pageSize=50 200 in 6.3s (next.js: 2.3s, proxy.ts: 1652ms, application-code: 2.3s)
+ GET /api/vehicles?pageSize=50 200 in 6.3s (next.js: 2.7s, proxy.ts: 1654ms, application-code: 1919ms)
+ GET /api/tips?pageSize=50 200 in 6.3s (next.js: 3.0s, proxy.ts: 1652ms, application-code: 1627ms)
+ GET /api/locations?pageSize=50 200 in 6.1s (next.js: 2.8s, proxy.ts: 1996ms, application-code: 1352ms)
+ GET /api/characters?pageSize=50 200 in 6.2s (next.js: 3.3s, proxy.ts: 1513ms, application-code: 1293ms)
+ GET /api/weapons?pageSize=50 200 in 6.4s (next.js: 3.5s, proxy.ts: 2.0s, application-code: 869ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/news?pageSize=50 200 in 2.2s (next.js: 399ms, proxy.ts: 919ms, application-code: 848ms)
+ GET /api/locations?pageSize=50 200 in 2.2s (next.js: 524ms, proxy.ts: 908ms, application-code: 726ms)
+ GET /api/vehicles?pageSize=50 200 in 2.2s (next.js: 566ms, proxy.ts: 932ms, application-code: 688ms)
+ GET /api/tips?pageSize=50 200 in 2.2s (next.js: 696ms, proxy.ts: 928ms, application-code: 567ms)
+ GET /api/characters?pageSize=50 200 in 1650ms (next.js: 602ms, proxy.ts: 520ms, application-code: 528ms)
+ GET /api/weapons?pageSize=50 200 in 1666ms (next.js: 683ms, proxy.ts: 537ms, application-code: 446ms)
+[Analytics] Received 3 events
+ POST /api/analytics 200 in 216ms (next.js: 50ms, proxy.ts: 30ms, application-code: 137ms)
+[Analytics] Received 5 events
+ POST /api/analytics 200 in 1899ms (next.js: 816ms, proxy.ts: 71ms, application-code: 1011ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE (`main`.`News`.`slug` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query UPDATE `main`.`News` SET `views` = (`main`.`News`.`views` + ?), `updatedAt` = ? WHERE (`main`.`News`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `slug` AS `slug`, `description` AS `description`, `content` AS `content`, `coverImage` AS `coverImage`, `category` AS `category`, `source` AS `source`, `sourceUrl` AS `sourceUrl`, `publishedAt` AS `publishedAt`, `updatedAt` AS `updatedAt`, `views` AS `views`, `likes` AS `likes`, `trendingScore` AS `trendingScore`, `status` AS `status`, `createdAt` AS `createdAt`
+ GET /api/news/gta-6-story-jason-lucia 200 in 14.4s (next.js: 13.9s, proxy.ts: 148ms, application-code: 431ms)
+ GET /news/gta-6-story-jason-lucia 200 in 60s (next.js: 44s, proxy.ts: 30ms, application-code: 16.1s)
+ GET / 200 in 708ms (next.js: 395ms, proxy.ts: 18ms, application-code: 294ms)
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/locations?pageSize=50 200 in 4.9s (next.js: 778ms, proxy.ts: 97ms, application-code: 4.0s)
+ GET /api/vehicles?pageSize=50 200 in 4.9s (next.js: 798ms, proxy.ts: 95ms, application-code: 4.0s)
+ GET /api/weapons?pageSize=50 200 in 4.9s (next.js: 1588ms, proxy.ts: 92ms, application-code: 3.2s)
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /api/tips?pageSize=50 200 in 4.9s (next.js: 1633ms, proxy.ts: 88ms, application-code: 3.2s)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+ GET /api/news?pageSize=50 200 in 4.7s (next.js: 50ms, proxy.ts: 4.6s, application-code: 26ms)
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/characters?pageSize=50 200 in 5.2s (next.js: 844ms, proxy.ts: 4.0s, application-code: 360ms)
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /api/news?pageSize=50 200 in 1486ms (next.js: 452ms, proxy.ts: 183ms, application-code: 851ms)
+ GET /api/tips?pageSize=50 200 in 1488ms (next.js: 846ms, proxy.ts: 182ms, application-code: 459ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 1492ms (next.js: 1021ms, proxy.ts: 204ms, application-code: 266ms)
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/vehicles?pageSize=50 200 in 1150ms (next.js: 50ms, proxy.ts: 1048ms, application-code: 52ms)
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/locations?pageSize=50 200 in 1039ms (next.js: 70ms, proxy.ts: 934ms, application-code: 35ms)
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/characters?pageSize=50 200 in 137ms (next.js: 81ms, proxy.ts: 18ms, application-code: 39ms)
+[Analytics] Received 4 events
+ POST /api/analytics 200 in 341ms (next.js: 43ms, proxy.ts: 274ms, application-code: 25ms)
+✓ Compiled in 48.8s
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /api/news 200 in 478ms (next.js: 198ms, proxy.ts: 56ms, application-code: 224ms)
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/locations 200 in 298ms (next.js: 238ms, proxy.ts: 15ms, application-code: 46ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/characters 200 in 243ms (next.js: 139ms, proxy.ts: 17ms, application-code: 87ms)
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /api/tips 200 in 309ms (next.js: 214ms, proxy.ts: 33ms, application-code: 62ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/characters 200 in 868ms (next.js: 299ms, proxy.ts: 20ms, application-code: 549ms)
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/characters 200 in 78ms (next.js: 25ms, proxy.ts: 26ms, application-code: 27ms)
+[Analytics] Received 3 events
+ POST /api/analytics 200 in 150ms (next.js: 77ms, proxy.ts: 21ms, application-code: 52ms)
+ GET / 200 in 219ms (next.js: 100ms, proxy.ts: 16ms, application-code: 103ms)
+ GET / 200 in 142ms (next.js: 48ms, proxy.ts: 16ms, application-code: 78ms)
+ GET / 200 in 392ms (next.js: 46ms, proxy.ts: 28ms, application-code: 318ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 1014ms (next.js: 100ms, proxy.ts: 226ms, application-code: 688ms)
+ GET /api/vehicles?pageSize=50 200 in 1034ms (next.js: 310ms, proxy.ts: 165ms, application-code: 558ms)
+ GET /api/tips?pageSize=50 200 in 1037ms (next.js: 376ms, proxy.ts: 190ms, application-code: 471ms)
+ GET /api/characters?pageSize=50 200 in 1037ms (next.js: 442ms, proxy.ts: 221ms, application-code: 373ms)
+ GET /api/news?pageSize=50 200 in 1012ms (next.js: 595ms, proxy.ts: 205ms, application-code: 213ms)
+ GET /api/locations?pageSize=50 200 in 1064ms (next.js: 864ms, proxy.ts: 85ms, application-code: 115ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 402ms (next.js: 58ms, proxy.ts: 121ms, application-code: 224ms)
+ GET /api/vehicles?pageSize=50 200 in 408ms (next.js: 75ms, proxy.ts: 131ms, application-code: 202ms)
+ GET /api/tips?pageSize=50 200 in 405ms (next.js: 111ms, proxy.ts: 125ms, application-code: 169ms)
+ GET /api/characters?pageSize=50 200 in 402ms (next.js: 149ms, proxy.ts: 126ms, application-code: 127ms)
+ GET /api/news?pageSize=50 200 in 407ms (next.js: 181ms, proxy.ts: 128ms, application-code: 98ms)
+ GET /api/locations?pageSize=50 200 in 406ms (next.js: 218ms, proxy.ts: 124ms, application-code: 64ms)
+[Analytics] Received 2 events
+ POST /api/analytics 200 in 126ms (next.js: 30ms, proxy.ts: 30ms, application-code: 66ms)
+✓ Compiled in 22.9s
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/news?pageSize=50 200 in 395ms (next.js: 35ms, proxy.ts: 202ms, application-code: 158ms)
+ GET /api/tips?pageSize=50 200 in 396ms (next.js: 93ms, proxy.ts: 200ms, application-code: 104ms)
+ GET /api/characters?pageSize=50 200 in 320ms (next.js: 104ms, proxy.ts: 130ms, application-code: 86ms)
+ GET /api/locations?pageSize=50 200 in 320ms (next.js: 122ms, proxy.ts: 129ms, application-code: 69ms)
+ GET /api/vehicles?pageSize=50 200 in 403ms (next.js: 160ms, proxy.ts: 192ms, application-code: 51ms)
+ GET / 200 in 641ms (next.js: 157ms, proxy.ts: 31ms, application-code: 452ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 271ms (next.js: 73ms, proxy.ts: 86ms, application-code: 112ms)
+ GET /api/news?pageSize=50 200 in 279ms (next.js: 94ms, proxy.ts: 105ms, application-code: 80ms)
+ GET /api/tips?pageSize=50 200 in 281ms (next.js: 105ms, proxy.ts: 114ms, application-code: 62ms)
+ GET /api/characters?pageSize=50 200 in 291ms (next.js: 128ms, proxy.ts: 115ms, application-code: 49ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/locations?pageSize=50 200 in 305ms (next.js: 144ms, proxy.ts: 88ms, application-code: 72ms)
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/vehicles?pageSize=50 200 in 271ms (next.js: 103ms, proxy.ts: 133ms, application-code: 35ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 200ms (next.js: 69ms, proxy.ts: 96ms, application-code: 35ms)
+✓ Compiled in 13.5s
+ GET / 200 in 167ms (next.js: 53ms, proxy.ts: 14ms, application-code: 101ms)
+[Analytics] Received 6 events
+ POST /api/analytics 200 in 84ms (next.js: 44ms, proxy.ts: 14ms, application-code: 26ms)
+✓ Compiled in 27.2s
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+ GET /api/vehicles?pageSize=50 200 in 1164ms (next.js: 664ms, proxy.ts: 151ms, application-code: 349ms)
+ GET /api/locations?pageSize=50 200 in 1216ms (next.js: 729ms, proxy.ts: 166ms, application-code: 320ms)
+ GET /api/characters?pageSize=50 200 in 1225ms (next.js: 802ms, proxy.ts: 170ms, application-code: 253ms)
+ GET /api/news?pageSize=50 200 in 1183ms (next.js: 634ms, proxy.ts: 382ms, application-code: 167ms)
+ GET /api/tips?pageSize=50 200 in 1230ms (next.js: 700ms, proxy.ts: 399ms, application-code: 132ms)
+ GET / 200 in 2.0s (next.js: 442ms, proxy.ts: 147ms, application-code: 1450ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Location`.`id` FROM `main`.`Location` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Location`.`id`, `main`.`Location`.`name`, `main`.`Location`.`slug`, `main`.`Location`.`description`, `main`.`Location`.`image`, `main`.`Location`.`type`, `main`.`Location`.`region`, `main`.`Location`.`latitude`, `main`.`Location`.`longitude`, `main`.`Location`.`tags`, `main`.`Location`.`metadata`, `main`.`Location`.`createdAt`, `main`.`Location`.`updatedAt` FROM `main`.`Location` WHERE 1=1 ORDER BY `main`.`Location`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 1071ms (next.js: 302ms, proxy.ts: 161ms, application-code: 608ms)
+ GET /api/locations?pageSize=50 200 in 1060ms (next.js: 468ms, proxy.ts: 164ms, application-code: 427ms)
+prisma:query SELECT `main`.`Vehicle`.`id`, `main`.`Vehicle`.`name`, `main`.`Vehicle`.`slug`, `main`.`Vehicle`.`description`, `main`.`Vehicle`.`image`, `main`.`Vehicle`.`class`, `main`.`Vehicle`.`price`, `main`.`Vehicle`.`topSpeed`, `main`.`Vehicle`.`acceleration`, `main`.`Vehicle`.`handling`, `main`.`Vehicle`.`location`, `main`.`Vehicle`.`availability`, `main`.`Vehicle`.`tags`, `main`.`Vehicle`.`metadata`, `main`.`Vehicle`.`createdAt`, `main`.`Vehicle`.`updatedAt` FROM `main`.`Vehicle` WHERE 1=1 ORDER BY `main`.`Vehicle`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Vehicle`.`id` FROM `main`.`Vehicle` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/vehicles?pageSize=50 200 in 1099ms (next.js: 860ms, proxy.ts: 169ms, application-code: 70ms)
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Tip`.`id` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Tip`.`id`, `main`.`Tip`.`title`, `main`.`Tip`.`slug`, `main`.`Tip`.`shortDescription`, `main`.`Tip`.`fullExplanation`, `main`.`Tip`.`category`, `main`.`Tip`.`difficulty`, `main`.`Tip`.`image`, `main`.`Tip`.`tags`, `main`.`Tip`.`views`, `main`.`Tip`.`likes`, `main`.`Tip`.`trendingScore`, `main`.`Tip`.`isCommunityTheory`, `main`.`Tip`.`status`, `main`.`Tip`.`createdAt`, `main`.`Tip`.`updatedAt` FROM `main`.`Tip` WHERE `main`.`Tip`.`status` = ? ORDER BY `main`.`Tip`.`trendingScore` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`News`.`id`, `main`.`News`.`title`, `main`.`News`.`slug`, `main`.`News`.`description`, `main`.`News`.`content`, `main`.`News`.`coverImage`, `main`.`News`.`category`, `main`.`News`.`source`, `main`.`News`.`sourceUrl`, `main`.`News`.`publishedAt`, `main`.`News`.`updatedAt`, `main`.`News`.`views`, `main`.`News`.`likes`, `main`.`News`.`trendingScore`, `main`.`News`.`status`, `main`.`News`.`createdAt` FROM `main`.`News` WHERE `main`.`News`.`status` = ? ORDER BY `main`.`News`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`News`.`id` FROM `main`.`News` WHERE `main`.`News`.`status` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Character`.`id` FROM `main`.`Character` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Character`.`id`, `main`.`Character`.`name`, `main`.`Character`.`slug`, `main`.`Character`.`description`, `main`.`Character`.`image`, `main`.`Character`.`role`, `main`.`Character`.`affiliation`, `main`.`Character`.`status`, `main`.`Character`.`tags`, `main`.`Character`.`metadata`, `main`.`Character`.`createdAt`, `main`.`Character`.`updatedAt` FROM `main`.`Character` WHERE 1=1 ORDER BY `main`.`Character`.`name` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count$_all` FROM (SELECT `main`.`Weapon`.`id` FROM `main`.`Weapon` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/tips?pageSize=50 200 in 753ms (next.js: 507ms, proxy.ts: 57ms, application-code: 190ms)
+ GET /api/news?pageSize=50 200 in 1690ms (next.js: 1114ms, proxy.ts: 400ms, application-code: 176ms)
+ GET /api/characters?pageSize=50 200 in 1702ms (next.js: 1300ms, proxy.ts: 250ms, application-code: 153ms)
+prisma:query SELECT `main`.`Weapon`.`id`, `main`.`Weapon`.`name`, `main`.`Weapon`.`slug`, `main`.`Weapon`.`description`, `main`.`Weapon`.`image`, `main`.`Weapon`.`category`, `main`.`Weapon`.`damage`, `main`.`Weapon`.`fireRate`, `main`.`Weapon`.`range`, `main`.`Weapon`.`accuracy`, `main`.`Weapon`.`availability`, `main`.`Weapon`.`tags`, `main`.`Weapon`.`metadata`, `main`.`Weapon`.`createdAt`, `main`.`Weapon`.`updatedAt` FROM `main`.`Weapon` WHERE 1=1 ORDER BY `main`.`Weapon`.`name` ASC LIMIT ? OFFSET ?
+ GET /api/weapons?pageSize=50 200 in 734ms (next.js: 592ms, proxy.ts: 28ms, application-code: 115ms)
+[Analytics] Received 2 events
+ POST /api/analytics 200 in 108ms (next.js: 63ms, proxy.ts: 12ms, application-code: 33ms)
+✓ Compiled in 13.5s
+✓ Compiled in 6.2s
+ GET / 200 in 229ms (next.js: 78ms, proxy.ts: 55ms, application-code: 96ms)
+✓ Compiled in 8.3s
+ GET / 200 in 115ms (next.js: 39ms, proxy.ts: 12ms, application-code: 64ms)
+✓ Compiled in 7.5s
+ GET / 200 in 89ms (next.js: 35ms, proxy.ts: 14ms, application-code: 40ms)
+✓ Compiled in 7.9s
+ GET / 200 in 83ms (next.js: 32ms, proxy.ts: 11ms, application-code: 39ms)
+✓ Compiled in 7.2s
+ GET / 200 in 90ms (next.js: 40ms, proxy.ts: 10ms, application-code: 41ms)
+✓ Compiled in 6.7s
+ GET / 200 in 98ms (next.js: 34ms, proxy.ts: 12ms, application-code: 52ms)
+✓ Compiled in 10.4s
+ GET / 200 in 66ms (next.js: 27ms, proxy.ts: 9ms, application-code: 30ms)
+ GET / 200 in 175ms (next.js: 28ms, proxy.ts: 9ms, application-code: 138ms)
+✓ Compiled in 11.7s
+ GET / 200 in 108ms (next.js: 45ms, proxy.ts: 10ms, application-code: 53ms)
+[Analytics] Received 1 events
+ POST /api/analytics 200 in 47ms (next.js: 13ms, proxy.ts: 11ms, application-code: 24ms)
+✓ Compiled in 10s
+ GET / 200 in 171ms (next.js: 35ms, proxy.ts: 13ms, application-code: 123ms)
+✓ Compiled in 10.9s
+ GET / 200 in 108ms (next.js: 47ms, proxy.ts: 11ms, application-code: 50ms)

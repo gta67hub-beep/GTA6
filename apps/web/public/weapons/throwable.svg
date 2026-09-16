@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d001a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)" rx="20"/>
+  <g transform="translate(100,90) scale(1.2)" fill="none" stroke="#ff3366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0,-30 C15,-30 25,-20 25,-5 L25,15 C25,25 15,35 0,35 C-15,35 -25,25 -25,15 L-25,-5 C-25,-20 -15,-30 0,-30 Z M-3,-30 L3,-30 L3,-40 L8,-50 L-8,-50 L-3,-40 Z"/>
+  </g>
+  <text x="100" y="175" text-anchor="middle" fill="#ff3366" font-family="Arial Black" font-size="14" font-weight="bold">THROWABLE</text>
+</svg>

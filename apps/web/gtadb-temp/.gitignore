@@ -1,0 +1,11 @@
+.DS_Store
+rsync-add-commit-push.sh
+guess/logo.py
+map/config.js
+map/api/__pycache__/
+map/api/venv/
+map/data/*.json
+map/data/*/*.jsonl
+map/trash/
+map/invite.py
+maps/config.js
