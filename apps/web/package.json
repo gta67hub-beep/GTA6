@@ -5,15 +5,20 @@
   "scripts": {
     "dev": "node scripts/start.js",
     "dev:next": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "node scripts/start.js",
     "start:next": "next start",
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
     "news:fetch": "node scripts/fetch-news.js",
     "news:scheduler": "node scripts/news-scheduler.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

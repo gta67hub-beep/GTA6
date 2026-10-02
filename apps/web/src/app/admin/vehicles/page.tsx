@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/database/client";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminVehiclesPage() {
   const vehicles = await prisma.vehicle.findMany({
     orderBy: { createdAt: "desc" },

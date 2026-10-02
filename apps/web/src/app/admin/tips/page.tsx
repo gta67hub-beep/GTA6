@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/database/client";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminTipsPage() {
   const tips = await prisma.tip.findMany({
     orderBy: { createdAt: "desc" },
