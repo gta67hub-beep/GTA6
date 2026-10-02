@@ -1,12 +1,12 @@
 import Link from "next/link";
+import { NEWS } from "@/data";
 
-async function getNews(slug: string) {
-  const res = await fetch(`http://localhost:3000/api/news/${slug}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data.data;
+function getNews(slug: string) {
+  return NEWS.find((n) => n.slug === slug) || null;
+}
+
+export function generateStaticParams() {
+  return NEWS.map((n) => ({ slug: n.slug }));
 }
 
 export default async function NewsDetailPage({

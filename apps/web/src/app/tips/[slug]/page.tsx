@@ -1,12 +1,12 @@
 import Link from "next/link";
+import { TIPS } from "@/data";
 
-async function getTip(slug: string) {
-  const res = await fetch(`http://localhost:3000/api/tips/${slug}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data.data;
+function getTip(slug: string) {
+  return TIPS.find((t) => t.slug === slug) || null;
+}
+
+export function generateStaticParams() {
+  return TIPS.map((t) => ({ slug: t.slug }));
 }
 
 export default async function TipDetailPage({

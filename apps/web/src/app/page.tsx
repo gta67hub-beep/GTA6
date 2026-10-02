@@ -9,6 +9,14 @@ import dynamic from "next/dynamic";
 import CinematicSlideshow from "@/components/CinematicSlideshow";
 import CharacterModal from "@/components/CharacterModal";
 import AdBanner from "@/components/AdBanner";
+import {
+  NEWS as STATIC_NEWS,
+  TIPS as STATIC_TIPS,
+  VEHICLES as STATIC_VEHICLES,
+  CHARACTERS as STATIC_CHARACTERS,
+  LOCATIONS as STATIC_LOCATIONS,
+  WEAPONS as STATIC_WEAPONS,
+} from "@/data";
 
 const LeonidaMap = dynamic(() => import("@/components/LeonidaMap"), {
   ssr: false,
@@ -265,12 +273,12 @@ function getNewsImage(slug: string): string {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("inicio");
-  const [news, setNews] = useState<any[]>([]);
-  const [tips, setTips] = useState<any[]>([]);
-  const [vehicles, setVehicles] = useState<any[]>([]);
-  const [characters, setCharacters] = useState<any[]>([]);
-  const [locations, setLocations] = useState<any[]>([]);
-  const [weapons, setWeapons] = useState<any[]>([]);
+  const [news, setNews] = useState<any[]>(STATIC_NEWS);
+  const [tips, setTips] = useState<any[]>(STATIC_TIPS);
+  const [vehicles, setVehicles] = useState<any[]>(STATIC_VEHICLES);
+  const [characters, setCharacters] = useState<any[]>(STATIC_CHARACTERS);
+  const [locations, setLocations] = useState<any[]>(STATIC_LOCATIONS);
+  const [weapons, setWeapons] = useState<any[]>(STATIC_WEAPONS);
   const [newsCategory, setNewsCategory] = useState("all");
   const [tipCategory, setTipCategory] = useState("all");
   const [vehicleClass, setVehicleClass] = useState("all");
@@ -294,37 +302,15 @@ export default function Home() {
     });
   }
 
-  async function safeFetch(url: string) {
-    try {
-      const r = await fetch(url);
-      if (!r.ok) return [];
-      const j = await r.json();
-      return j.data?.data || [];
-    } catch { return []; }
-  }
-
-  async function fetchData() {
-    setLoading(true);
-    const [n, t, v, c, l, w] = await Promise.all([
-      safeFetch("/api/news?pageSize=50"),
-      safeFetch("/api/tips?pageSize=50"),
-      safeFetch("/api/vehicles?pageSize=50"),
-      safeFetch("/api/characters?pageSize=50"),
-      safeFetch("/api/locations?pageSize=50"),
-      safeFetch("/api/weapons?pageSize=50"),
-    ]);
-    setNews(n);
-    setTips(t);
-    setVehicles(v);
-    setCharacters(c);
-    setLocations(l);
-    setWeapons(w);
-    setLoading(false);
-  }
-
   useEffect(() => {
     trackPageView("home");
-    fetchData();
+    setNews(STATIC_NEWS);
+    setTips(STATIC_TIPS);
+    setVehicles(STATIC_VEHICLES);
+    setCharacters(STATIC_CHARACTERS);
+    setLocations(STATIC_LOCATIONS);
+    setWeapons(STATIC_WEAPONS);
+    setLoading(false);
     const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
   }, []);
