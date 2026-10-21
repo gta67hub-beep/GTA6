@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google crawler
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.gtavix.com/sitemap.xml
