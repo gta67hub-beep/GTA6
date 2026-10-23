@@ -349,7 +349,7 @@ export default function Home() {
           ))}
         </nav>
 
-        <div className="mt-auto pt-4 border-t border-purple-500/10 flex flex-col items-center">
+        <div className="mt-auto pt-4 flex justify-center">
           <AdBanner position="sidebar" />
         </div>
       </aside>

@@ -116,48 +116,34 @@ export default function AdBanner({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-xl border border-purple-500/25 bg-[#110022]/40 backdrop-blur-sm p-2 flex flex-col items-center justify-center transition-all hover:border-pink-500/30 ${className}`}
+      className={`w-full flex justify-center items-center overflow-hidden my-2 ${className}`}
       style={{
-        maxWidth: isSidebar ? "200px" : "768px",
+        maxWidth: isSidebar ? "160px" : "100%",
         margin: "0 auto",
-        width: "100%",
       }}
     >
-      <div className="w-full flex items-center justify-between px-2 pb-1.5 border-b border-purple-500/10 mb-2">
-        <span className="text-[10px] font-mono text-purple-400/80 uppercase tracking-widest flex items-center gap-1.5 font-semibold">
-          <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" />
-          ANUNCIO
-        </span>
-        <span className="text-[9px] text-gray-500 font-mono tracking-wider">
-          ADSTERRA
-        </span>
-      </div>
-
-      <div className="w-full flex justify-center items-center overflow-hidden">
-        {isSidebar ? (
-          <iframe
-            srcDoc={BANNER_160X600_HTML}
-            width="160"
-            height="600"
-            title="Adsterra 160x600 Banner"
-            className="border-0 overflow-hidden"
-            style={{ border: "none", width: "160px", height: "600px" }}
-            scrolling="no"
-          />
-        ) : (
-          <iframe
-            srcDoc={NATIVE_BANNER_HTML}
-            title="Adsterra Native Banner"
-            className="w-full border-0 overflow-hidden"
-            style={{
-              border: "none",
-              height: `${nativeHeight}px`,
-              width: "100%",
-            }}
-            scrolling="no"
-          />
-        )}
-      </div>
+      {isSidebar ? (
+        <iframe
+          srcDoc={BANNER_160X600_HTML}
+          width="160"
+          height="600"
+          className="border-0 overflow-hidden"
+          style={{ border: "none", width: "160px", height: "600px", display: "block" }}
+          scrolling="no"
+        />
+      ) : (
+        <iframe
+          srcDoc={NATIVE_BANNER_HTML}
+          className="w-full border-0 overflow-hidden"
+          style={{
+            border: "none",
+            height: `${nativeHeight}px`,
+            width: "100%",
+            display: "block",
+          }}
+          scrolling="no"
+        />
+      )}
     </div>
   );
 }
