@@ -324,7 +324,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0014] text-white flex flex-col">
       <div className="flex flex-1">
       {/* ========== SIDEBAR ========== */}
-      <aside className="w-64 bg-[#0d0020] border-r border-purple-500/15 p-4 flex flex-col h-screen sticky top-0 shrink-0">
+      <aside className="w-64 bg-[#0d0020] border-r border-purple-500/15 p-4 flex flex-col h-screen sticky top-0 shrink-0 overflow-y-auto">
         <div className="mb-8 flex items-center gap-3">
           <img src="/gtalogo.jpg" alt="GTA 6 Logo" className="w-12 h-12 rounded-lg object-cover" />
           <div>
@@ -349,10 +349,8 @@ export default function Home() {
           ))}
         </nav>
 
-        <div className="mt-auto pt-4 border-t border-purple-500/10">
-          <div className="bg-[#110022] rounded-xl border border-purple-500/10 p-2 flex items-center justify-center h-[60px]">
-            <span className="text-gray-500 text-[9px]">300x60</span>
-          </div>
+        <div className="mt-auto pt-4 border-t border-purple-500/10 flex flex-col items-center">
+          <AdBanner position="sidebar" />
         </div>
       </aside>
 

@@ -104,7 +104,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-bold text-white mb-3">7. Advertising</h2>
             <p className="text-gray-400 text-sm">
-              GTA6 Hub may display advertisements through third-party services (Google AdSense). You agree to the presence of advertisements as part of the Service. Ad content is determined by third-party ad networks and not by GTA6 Hub. We are not responsible for the content of third-party advertisements.
+              GTA6 Hub may display advertisements through third-party services (such as Adsterra and Google AdSense). You agree to the presence of advertisements as part of the Service. Ad content is determined by third-party ad networks and not by GTA6 Hub. We are not responsible for the content of third-party advertisements.
             </p>
           </section>
 

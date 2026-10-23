@@ -67,6 +67,7 @@ export default function PrivacyPolicy() {
               We use the following third-party services that may collect information:
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1 text-gray-400 text-sm">
+              <li><strong className="text-white">Adsterra:</strong> Advertising network providing display and native advertisements.</li>
               <li><strong className="text-white">Google AdSense:</strong> Advertising service that may use cookies to serve relevant ads. Google&apos;s privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300">policies.google.com/privacy</a></li>
               <li><strong className="text-white">Vercel:</strong> Hosting and deployment platform</li>
             </ul>

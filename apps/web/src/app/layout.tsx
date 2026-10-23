@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import Adsterra from "@/components/Adsterra";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import "./globals.css";
 
@@ -32,9 +31,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4655536169309165"
-          crossOrigin="anonymous"
+          data-cfasync="false"
+          src="https://abscloud.org/1/fbd16d7f1963ce4c16ac8a305342549a"
+        />
+        <script
+          data-cfasync="false"
+          src="https://bauval.org/14/08b416a1e35d4dcdc43c81d1234c6f03"
         />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
@@ -44,7 +46,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </FavoritesProvider>
         </ErrorBoundary>
         <Analytics />
-        <Adsterra />
       </body>
     </html>
   );

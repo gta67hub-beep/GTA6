@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdBanner from "@/components/AdBanner";
 import { TIPS } from "@/data";
 
 function getTip(slug: string) {
@@ -88,6 +89,10 @@ export default async function TipDetailPage({
             className="text-gray-300 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: tip.fullExplanation }}
           />
+        </div>
+
+        <div className="my-8">
+          <AdBanner position="inline" />
         </div>
 
         <footer className="mt-8 pt-8 border-t border-gray-800">

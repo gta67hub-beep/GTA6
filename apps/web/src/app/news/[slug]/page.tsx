@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdBanner from "@/components/AdBanner";
 import { NEWS } from "@/data";
 
 function getNews(slug: string) {
@@ -86,6 +87,10 @@ export default async function NewsDetailPage({
             className="text-gray-300 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: news.content }}
           />
+        </div>
+
+        <div className="my-8">
+          <AdBanner position="inline" />
         </div>
 
         <footer className="mt-8 pt-8 border-t border-gray-800">

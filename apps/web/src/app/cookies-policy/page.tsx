@@ -37,7 +37,7 @@ export default function CookiesPolicy() {
               <li><strong className="text-white">Essential Cookies:</strong> Required for the website to function properly. These include session cookies for basic functionality.</li>
               <li><strong className="text-white">Functional Cookies:</strong> Remember your preferences and settings (e.g., favorites, display preferences) to enhance your experience.</li>
               <li><strong className="text-white">Analytics Cookies:</strong> Help us understand how visitors interact with our website by collecting anonymous usage data.</li>
-              <li><strong className="text-white">Advertising Cookies:</strong> Used by Google AdSense to serve relevant advertisements based on your browsing history and interests.</li>
+              <li><strong className="text-white">Advertising Cookies:</strong> Used by advertising networks (such as Adsterra and Google AdSense) to serve relevant advertisements and banners.</li>
             </ul>
           </section>
 
@@ -47,7 +47,8 @@ export default function CookiesPolicy() {
               Some cookies are placed by third-party services that appear on our pages. We use the following third-party services that may set cookies:
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1 text-gray-400 text-sm">
-              <li><strong className="text-white">Google AdSense:</strong> Serves personalized advertisements. Google may use cookies to track your browsing activity across websites to provide relevant ads. You can opt out of personalized advertising at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300">Google Ad Settings</a>.</li>
+              <li><strong className="text-white">Adsterra:</strong> Delivers banner, native, and interactive advertisements.</li>
+              <li><strong className="text-white">Google AdSense:</strong> Serves advertisements. Google may use cookies to track your browsing activity across websites to provide relevant ads. You can opt out of personalized advertising at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300">Google Ad Settings</a>.</li>
               <li><strong className="text-white">Google Analytics:</strong> Collects anonymous usage data to help us improve the service.</li>
             </ul>
           </section>
