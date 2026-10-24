@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ADSTERRA_ENABLED } from "@/lib/adsterra";
 
 interface AdBannerProps {
   position?: "hero" | "sidebar" | "inline" | "footer";
@@ -98,7 +99,7 @@ export default function AdBanner({
     (format === "auto" && position === "sidebar");
 
   useEffect(() => {
-    if (isSidebar) return;
+    if (!ADSTERRA_ENABLED || isSidebar) return;
 
     const handleMessage = (event: MessageEvent) => {
       if (
@@ -113,6 +114,10 @@ export default function AdBanner({
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, [isSidebar]);
+
+  if (!ADSTERRA_ENABLED) {
+    return null;
+  }
 
   return (
     <div

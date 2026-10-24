@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
+import { ADSTERRA_ENABLED, ADSTERRA_CONFIG } from "@/lib/adsterra";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,14 +34,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <script
-          data-cfasync="false"
-          src="https://abscloud.org/1/fbd16d7f1963ce4c16ac8a305342549a"
-        />
-        <script
-          data-cfasync="false"
-          src="https://bauval.org/14/08b416a1e35d4dcdc43c81d1234c6f03"
-        />
+        {ADSTERRA_ENABLED && (
+          <>
+            <script
+              data-cfasync="false"
+              src={ADSTERRA_CONFIG.popunderScript}
+            />
+            <script
+              data-cfasync="false"
+              src={ADSTERRA_CONFIG.socialBarScript}
+            />
+          </>
+        )}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4655536169309165"
