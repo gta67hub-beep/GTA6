@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description:
     "The ultimate GTA 6 companion app. Countdown, vehicles, weapons, characters, interactive Leonida map, tips & guides, and more.",
   icons: { icon: "/favicon.png" },
+  other: {
+    "google-adsense-account": "ca-pub-4655536169309165",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -30,7 +33,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <meta name="google-adsense-account" content="ca-pub-4655536169309165" />
         <script
           data-cfasync="false"
           src="https://abscloud.org/1/fbd16d7f1963ce4c16ac8a305342549a"
