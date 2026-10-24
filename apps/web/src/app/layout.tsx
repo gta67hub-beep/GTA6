@@ -38,6 +38,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           data-cfasync="false"
           src="https://bauval.org/14/08b416a1e35d4dcdc43c81d1234c6f03"
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4655536169309165"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <ErrorBoundary>
