@@ -30,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4655536169309165" />
         <script
           data-cfasync="false"
           src="https://abscloud.org/1/fbd16d7f1963ce4c16ac8a305342549a"
