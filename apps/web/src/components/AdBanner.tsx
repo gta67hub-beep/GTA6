@@ -19,8 +19,8 @@ const BANNER_160X600_HTML = `<!DOCTYPE html>
     html, body {
       margin: 0;
       padding: 0;
-      width: 160px;
-      height: 600px;
+      width: 468px;
+      height: 60px;
       background: transparent;
       display: flex;
       justify-content: center;
@@ -31,14 +31,14 @@ const BANNER_160X600_HTML = `<!DOCTYPE html>
 <body>
   <script type="text/javascript">
     atOptions = {
-      'key' : 'dc4dba066d9a6da87140eaebf2747c21',
+      'key' : 'daabeb3da130656aee5257cd643292df',
       'format' : 'iframe',
-      'height' : 600,
-      'width' : 160,
+      'height' : 60,
+      'width' : 468,
       'params' : {}
     };
   </script>
-  <script type="text/javascript" src="https://bauval.org/22/dc4dba066d9a6da87140eaebf2747c21"></script>
+  <script type="text/javascript" src="https://bauval.org/22/daabeb3da130656aee5257cd643292df"></script>
 </body>
 </html>`;
 
@@ -129,10 +129,10 @@ export default function AdBanner({
       {isSidebar ? (
         <iframe
           srcDoc={BANNER_160X600_HTML}
-          width="160"
-          height="600"
+          width="468"
+          height="60"
           className="border-0"
-          style={{ border: "none", width: "160px", height: "600px", display: "block" }}
+          style={{ border: "none", width: "468px", height: "60px", display: "block" }}
           scrolling="no"
         />
       ) : (
