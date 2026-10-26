@@ -21,7 +21,6 @@ const BANNER_160X600_HTML = `<!DOCTYPE html>
       padding: 0;
       width: 160px;
       height: 600px;
-      overflow: hidden;
       background: transparent;
       display: flex;
       justify-content: center;
@@ -56,7 +55,6 @@ const NATIVE_BANNER_HTML = `<!DOCTYPE html>
       background: transparent;
       width: 100%;
       min-height: 90px;
-      overflow: hidden;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     #container-83cba87a088a945b986540472cd3d65c {
@@ -105,9 +103,10 @@ export default function AdBanner({
       if (
         event.data &&
         event.data.type === "adsterra-native-height" &&
-        typeof event.data.height === "number"
+        typeof event.data.height === "number" &&
+        Number.isFinite(event.data.height)
       ) {
-        setNativeHeight(Math.max(90, Math.min(event.data.height, 500)));
+        setNativeHeight(Math.max(90, event.data.height));
       }
     };
 
@@ -121,7 +120,7 @@ export default function AdBanner({
 
   return (
     <div
-      className={`w-full flex justify-center items-center overflow-hidden my-2 ${className}`}
+      className={`w-full flex justify-center items-center my-2 ${className}`}
       style={{
         maxWidth: isSidebar ? "160px" : "100%",
         margin: "0 auto",
@@ -132,14 +131,14 @@ export default function AdBanner({
           srcDoc={BANNER_160X600_HTML}
           width="160"
           height="600"
-          className="border-0 overflow-hidden"
+          className="border-0"
           style={{ border: "none", width: "160px", height: "600px", display: "block" }}
           scrolling="no"
         />
       ) : (
         <iframe
           srcDoc={NATIVE_BANNER_HTML}
-          className="w-full border-0 overflow-hidden"
+          className="w-full border-0"
           style={{
             border: "none",
             height: `${nativeHeight}px`,
