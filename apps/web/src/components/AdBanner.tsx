@@ -1,15 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ADSTERRA_ENABLED } from "@/lib/adsterra";
 
 interface AdBannerProps {
   position?: "hero" | "sidebar" | "inline" | "footer";
-  format?: "native" | "banner160x600" | "auto";
+  format?: "horizontal" | "native" | "auto";
   className?: string;
 }
 
-const BANNER_160X600_HTML = `<!DOCTYPE html>
+const BANNER_WIDTH = 468;
+const BANNER_HEIGHT = 60;
+
+const HORIZONTAL_BANNER_HTML = `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -25,6 +28,7 @@ const BANNER_160X600_HTML = `<!DOCTYPE html>
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -87,17 +91,44 @@ const NATIVE_BANNER_HTML = `<!DOCTYPE html>
 
 export default function AdBanner({
   position = "inline",
-  format = "auto",
+  format = "horizontal",
   className = "",
 }: AdBannerProps) {
-  const [nativeHeight, setNativeHeight] = useState<number>(120);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  const [nativeHeight, setNativeHeight] = useState<number>(90);
 
-  const isSidebar =
-    format === "banner160x600" ||
-    (format === "auto" && position === "sidebar");
+  const useNative = format === "native";
 
+  // Ajusta el banner horizontal al ancho real del contenedor
   useEffect(() => {
-    if (!ADSTERRA_ENABLED || isSidebar) return;
+    if (useNative) return;
+
+    const el = containerRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const width = el.clientWidth;
+      if (width > 0) {
+        setScale(Math.min(1, width / BANNER_WIDTH));
+      }
+    };
+
+    update();
+
+    if (typeof ResizeObserver !== "undefined") {
+      const observer = new ResizeObserver(update);
+      observer.observe(el);
+      return () => observer.disconnect();
+    }
+
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [useNative]);
+
+  // Escucha la altura del banner nativo (solo si se usa ese formato)
+  useEffect(() => {
+    if (!ADSTERRA_ENABLED || !useNative) return;
 
     const handleMessage = (event: MessageEvent) => {
       if (
@@ -112,32 +143,18 @@ export default function AdBanner({
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [isSidebar]);
+  }, [useNative]);
 
   if (!ADSTERRA_ENABLED) {
     return null;
   }
 
-  return (
-    <div
-      className={`w-full flex justify-center items-center my-2 ${className}`}
-      style={{
-        maxWidth: isSidebar ? "160px" : "100%",
-        margin: "0 auto",
-      }}
-    >
-      {isSidebar ? (
-        <iframe
-          srcDoc={BANNER_160X600_HTML}
-          width="468"
-          height="60"
-          className="border-0"
-          style={{ border: "none", width: "468px", height: "60px", display: "block" }}
-          scrolling="no"
-        />
-      ) : (
+  if (useNative) {
+    return (
+      <div className={`w-full flex justify-center items-center my-2 ${className}`}>
         <iframe
           srcDoc={NATIVE_BANNER_HTML}
+          title={`Anuncio ${position}`}
           className="w-full border-0"
           style={{
             border: "none",
@@ -147,7 +164,39 @@ export default function AdBanner({
           }}
           scrolling="no"
         />
-      )}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className={`w-full flex justify-center items-center my-2 ${className}`}
+    >
+      <div
+        style={{
+          width: `${BANNER_WIDTH * scale}px`,
+          height: `${BANNER_HEIGHT * scale}px`,
+          overflow: "hidden",
+        }}
+      >
+        <iframe
+          srcDoc={HORIZONTAL_BANNER_HTML}
+          title={`Anuncio ${position}`}
+          width={BANNER_WIDTH}
+          height={BANNER_HEIGHT}
+          className="border-0"
+          style={{
+            border: "none",
+            width: `${BANNER_WIDTH}px`,
+            height: `${BANNER_HEIGHT}px`,
+            transform: `scale(${scale})`,
+            transformOrigin: "top left",
+            display: "block",
+          }}
+          scrolling="no"
+        />
+      </div>
     </div>
   );
 }
