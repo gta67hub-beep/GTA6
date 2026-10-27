@@ -11,6 +11,8 @@ interface AdBannerProps {
 
 const BANNER_WIDTH = 468;
 const BANNER_HEIGHT = 60;
+// Permite agrandar el banner hasta ~700x90 manteniendo la proporción horizontal
+const MAX_SCALE = 1.5;
 
 const HORIZONTAL_BANNER_HTML = `<!DOCTYPE html>
 <html>
@@ -110,7 +112,7 @@ export default function AdBanner({
     const update = () => {
       const width = el.clientWidth;
       if (width > 0) {
-        setScale(Math.min(1, width / BANNER_WIDTH));
+        setScale(Math.min(MAX_SCALE, width / BANNER_WIDTH));
       }
     };
 
