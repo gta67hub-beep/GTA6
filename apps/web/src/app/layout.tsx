@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
@@ -36,20 +37,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         {ADSTERRA_ENABLED && (
           <>
-            <script
+            <Script
+              id="adsterra-popunder"
               data-cfasync="false"
               src={ADSTERRA_CONFIG.popunderScript}
+              strategy="afterInteractive"
             />
-            <script
+            <Script
+              id="adsterra-socialbar"
               data-cfasync="false"
               src={ADSTERRA_CONFIG.socialBarScript}
+              strategy="afterInteractive"
             />
           </>
         )}
-        <script
+        <Script
+          id="google-adsense"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4655536169309165"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
