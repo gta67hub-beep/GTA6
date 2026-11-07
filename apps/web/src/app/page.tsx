@@ -450,7 +450,7 @@ export default function Home() {
                       </div>
                       <span className="text-[10px] bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded">{n.category}</span>
                       <h4 className="text-white font-bold text-sm mt-2 line-clamp-2">{n.title}</h4>
-                      <p className="text-gray-500 text-xs mt-1">{n.views?.toLocaleString()} views</p>
+                      <p className="text-gray-500 text-xs mt-1">{n.views?.toLocaleString('en-US') ?? n.views?.toString() ?? '0'} views</p>
                     </Link>
                   ))}
                 </div>
@@ -865,8 +865,8 @@ export default function Home() {
                         <h3 className="text-white font-bold text-sm line-clamp-2 mb-2">{n.title}</h3>
                         <p className="text-gray-500 text-xs line-clamp-2 mb-3">{n.description}</p>
                         <div className="flex items-center gap-3 text-gray-600 text-[10px]">
-                          <span>👁 {n.views?.toLocaleString()}</span>
-                          <span>❤️ {n.likes?.toLocaleString()}</span>
+                          <span>👁 {n.views?.toLocaleString('en-US')}</span>
+                          <span>❤️ {n.likes?.toLocaleString('en-US')}</span>
                         </div>
                       </Link>
                     ))}
@@ -927,26 +927,8 @@ export default function Home() {
         {/* ===== MAP ===== */}
         {activeSection === "mapa" && (
            <SectionLayout title="LEONIDA MAP">
-            <div className="flex gap-4">
-              <div className="flex flex-col gap-4 flex-shrink-0 w-[100px]">
-                <div className="bg-[#110022] rounded-xl border border-purple-500/10 p-2 flex items-center justify-center h-[400px]">
-                  <span className="text-gray-500 text-[9px] text-center writing-mode-vertical">Ad</span>
-                </div>
-                <div className="bg-[#110022] rounded-xl border border-purple-500/10 p-2 flex items-center justify-center h-[400px]">
-                  <span className="text-gray-500 text-[9px] text-center">Ad</span>
-                </div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <LeonidaMap />
-              </div>
-              <div className="flex flex-col gap-4 flex-shrink-0 w-[100px]">
-                <div className="bg-[#110022] rounded-xl border border-purple-500/10 p-2 flex items-center justify-center h-[400px]">
-                  <span className="text-gray-500 text-[9px] text-center">Ad</span>
-                </div>
-                <div className="bg-[#110022] rounded-xl border border-purple-500/10 p-2 flex items-center justify-center h-[400px]">
-                  <span className="text-gray-500 text-[9px] text-center">Ad</span>
-                </div>
-              </div>
+            <div className="w-full">
+              <LeonidaMap />
             </div>
           </SectionLayout>
         )}
