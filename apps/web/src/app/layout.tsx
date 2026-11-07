@@ -4,7 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
-// No se usan scripts de popunder/socialbar en el layout
+import { ADSTERRA_ENABLED, ADSTERRA_CONFIG } from "@/lib/adsterra";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,6 +35,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {ADSTERRA_ENABLED && ADSTERRA_CONFIG.socialBarScript && (
+          <Script
+            id="adsterra-socialbar"
+            data-cfasync="false"
+            src={ADSTERRA_CONFIG.socialBarScript}
+            strategy="afterInteractive"
+          />
+        )}
         <Script
           id="google-adsense"
           async

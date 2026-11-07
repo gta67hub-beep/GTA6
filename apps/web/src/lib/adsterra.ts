@@ -3,6 +3,7 @@
 export const ADSTERRA_ENABLED = true;
 
 export const ADSTERRA_CONFIG = {
+  socialBarScript: "https://bauval.org/14/08b416a1e35d4dcdc43c81d1234c6f03",
   banner468x60: {
     key: "daabeb3da130656aee5257cd643292df",
     script: "https://bauval.org/22/daabeb3da130656aee5257cd643292df",
